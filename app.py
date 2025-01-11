@@ -75,4 +75,5 @@ if __name__ == "__main__":
     raw_text = extract_text_from_pdf(pdf_path)
     text_chunks = get_text_chunks(raw_text)
     get_vector_store(text_chunks)
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
+
