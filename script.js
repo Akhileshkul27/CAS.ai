@@ -5,13 +5,14 @@ document.getElementById("send-btn").addEventListener("click", async () => {
     const chatContainer = document.getElementById("chat-container");
     chatContainer.innerHTML += `<div class="user-query">${question}</div>`;
 
-    const response = await fetch("http://127.0.0.1:5000/ask", { // Flask backend URL
+    const response = await fetch("https://your-app-name.onrender.com/ask", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ question })
     });
+
     
 
     const data = await response.json();
