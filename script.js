@@ -5,7 +5,7 @@ document.getElementById("send-btn").addEventListener("click", async () => {
     const chatContainer = document.getElementById("chat-container");
     chatContainer.innerHTML += `<div class="user-query">${question}</div>`;
 
-    const response = await fetch("https://your-app-name.onrender.com/ask", {
+    const response = await fetch("https://cas-ai.onrender.com/ask", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
