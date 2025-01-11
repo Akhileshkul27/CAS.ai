@@ -1,7 +1,7 @@
 streamlit
-pdfplumber
 flask
 flask_cors
+pdfplumber
 langchain
 langchain-google-genai
 faiss-cpu
@@ -9,3 +9,4 @@ google-generativeai
 python-dotenv
 langchain-community
 PyPDF2
+gunicorn
