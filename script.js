@@ -55,16 +55,7 @@ sendBtn.addEventListener('click', async () => {
     if (!response.ok) {
       throw new Error(`Server error: ${response.status}`);
     }
-    const response = await fetch("https://cas-ai.onrender.com/ask", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question })
-    });
-
-    
-
+   
     const data = await response.json();
 
     removeTypingIndicator(); // Remove typing indicator once response is received
