@@ -1,4 +1,6 @@
 streamlit
+flask
+flask_cors
 pdfplumber
 langchain
 langchain-google-genai

@@ -1,51 +1,173 @@
 body {
-    background-color: #E3F2FD;
-    font-family: 'Arial', sans-serif;
-}
-
-.header {
-    text-align: center;
-    background-color: #023C74;
-    color: white;
-    padding: 20px;
-}
-
-.chat-container {
-    background-color: #BBDEFB;
-    padding: 20px;
-    border-radius: 10px;
-    max-height: 600px;
-    overflow-y: auto;
-    margin: 20px auto;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.input-section {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #7AB8FD 0%, #004899 55%);
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin: 20px auto;
-    width: 90%;
-}
-
-.input-box {
-    flex-grow: 1;
+    height: 100vh;
+  }
+  
+   /* .header {
+    background-color: #999;
+    width: 50px;
+    text-align: center;
+    margin-top: 20px;
+  } */
+  
+  .header-img {
+    width: 360px; 
+    height: auto;
+    align-self: center;
+    margin-top: 20px; 
+  } 
+  
+  .chat-container {
+    width: 1000px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 70vh;
+    margin-top: 10px;
+  }
+  
+  .chat-box {
+    width: 100%;
     padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.send-btn {
-    background-color: #0288D1;
+    flex: 1;
+    overflow-y: auto;
+    display: flex; /* Enable flexbox for alignment */
+    flex-direction: column; /* Stack messages vertically */
+  }
+  
+  
+  .footer {
     color: white;
-    padding: 10px 20px;
+    padding-top: 20px;
+    opacity: 0.4;
+  }
+  
+  .message {
+    display: flex;
+    margin: 10px 0;
+  }
+  
+  .message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .message.you {
+    justify-content: flex-end;
+  }
+  
+  .message.you img {
+    order: 2;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  
+  .message .text {
+    max-width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  /* For User's messages */
+  .message.you .text {
+    font-size: 16px;
+    background: white;
+    /* font-family: 'Courier New', Courier, monospace;  */
+    font-family: ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
+  }
+  
+  /* For Bot's messages */
+  .message.bot .text {
+    font-size: 16px;
+    background: #FFF5CF;
+    font-family: ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
+  }
+  
+  .input-box {
+    display: flex;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ddd;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .input-box input {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.send-btn:hover {
-    background-color: #01579B;
-}
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .input-box input:focus {
+    outline: none;
+    background-color: white;
+    border: none;
+  }
+  
+  .input-box button, .input-box img {
+    transition: 0.3s;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .input-box button {
+    font-size: 14px;
+  }
+  
+  input::placeholder {
+    opacity: 0.4;
+  }
+  
+  button {
+    background: none;
+    border: none;
+  }
+  
+  .typing-indicator {
+    /* display: none; */
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .typing-indicator .dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    background-color: #999;
+    border-radius: 50%;
+    animation: blink 1.4s infinite ease-in-out;
+  }
+  
+  .typing-indicator .dots span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .typing-indicator .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator .dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
