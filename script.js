@@ -13,7 +13,6 @@ function addMessage(text, sender) {
 //   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-<<<<<<< HEAD
 function addTypingIndicator() {
   const typingIndicator = document.createElement('div');
   typingIndicator.classList.add('typing-indicator');
@@ -56,7 +55,6 @@ sendBtn.addEventListener('click', async () => {
     if (!response.ok) {
       throw new Error(`Server error: ${response.status}`);
     }
-=======
     const response = await fetch("https://cas-ai.onrender.com/ask", {
         method: "POST",
         headers: {
@@ -66,7 +64,6 @@ sendBtn.addEventListener('click', async () => {
     });
 
     
->>>>>>> 2e4a7a4ea66ef8151586b518693baa06d3691b62
 
     const data = await response.json();
 
