@@ -44,9 +44,17 @@ def load_vector_store():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     return FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 
+
+
 def get_conversational_chain():
     prompt_template = """
-    You are an intelligent assistant tasked with answering user questions.
+    You are an intelligent assistant designed to provide accurate and helpful answers to any question asked by the user.
+
+    Guidelines:
+    1. Use the provided context to generate a precise and relevant answer.
+    2. If the context does not directly address the question, search through the available PDF content to find and incorporate relevant information.
+    3. Ensure responses are concise, clear, and easy to understand.
+    4. For questions unrelated to the context or PDF, provide a general, informative answer, redirecting the user if necessary.
 
     Context:
     {context}
