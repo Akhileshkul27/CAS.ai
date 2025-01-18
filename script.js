@@ -10,7 +10,7 @@ function addMessage(text, sender) {
     <div class="text">${text}</div>
   `;
   chatBox.appendChild(message);
-//   chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function addTypingIndicator() {
@@ -26,7 +26,7 @@ function addTypingIndicator() {
     </div>
   `;
   chatBox.appendChild(typingIndicator);
-//   chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function removeTypingIndicator() {
@@ -51,11 +51,15 @@ sendBtn.addEventListener('click', async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: userText })
     });
-
+    // const response = await fetch('http://127.0.0.1:5000/ask', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ question: userText })
+    // });
     if (!response.ok) {
       throw new Error(`Server error: ${response.status}`);
     }
-   
+
     const data = await response.json();
 
     removeTypingIndicator(); // Remove typing indicator once response is received
