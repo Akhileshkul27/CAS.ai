@@ -13,8 +13,12 @@ body {
   width: 80%; /* Adjusted for responsiveness */
   max-width: 360px; 
   height: auto;
+<<<<<<< HEAD
   /* align-self: center; */
   display: flex;
+=======
+  align-self: center;
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
   margin-top: 20px;
 }
 
@@ -25,9 +29,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+<<<<<<< HEAD
   height: 420px;
   margin-top: 100px;
   margin-right: 21px;
+=======
+  height: 70vh;
+  margin-top: 10px;
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
 }
 
 .chat-box {
@@ -40,8 +49,11 @@ body {
 }
 
 .footer {
+<<<<<<< HEAD
   align-self: center;
   font-size: 12px;
+=======
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
   color: white;
   padding-top: 20px;
   opacity: 0.4;
@@ -157,6 +169,7 @@ button {
   animation-delay: 0.4s;
 }
 
+<<<<<<< HEAD
 #send-btn {
   color: white;
   border: none;
@@ -171,6 +184,8 @@ button {
   transform: scale(1.1); /* Slightly enlarge the button */
 }
 
+=======
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
 @keyframes blink {
   0% { opacity: 0; }
   50% { opacity: 1; }

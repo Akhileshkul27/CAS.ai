@@ -46,16 +46,28 @@ sendBtn.addEventListener('click', async () => {
   addTypingIndicator(); // Show typing indicator
 
   try {
+<<<<<<< HEAD
     // const response = await fetch('https://cas-ai.onrender.com/ask', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
     //   body: JSON.stringify({ question: userText })
     // });
     const response = await fetch('http://127.0.0.1:5000/ask', {
+=======
+    const response = await fetch('https://cas-ai.onrender.com/ask', {
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: userText })
     });
+<<<<<<< HEAD
+=======
+    // const response = await fetch('http://127.0.0.1:5000/ask', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ question: userText })
+    // });
+>>>>>>> 1ab112f81db2b3b6e6159267799e598e24ab40c5
     if (!response.ok) {
       throw new Error(`Server error: ${response.status}`);
     }
