@@ -10,10 +10,9 @@ function addMessage(text, sender) {
     <div class="text">${text}</div>
   `;
   chatBox.appendChild(message);
-//   chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-<<<<<<< HEAD
 function addTypingIndicator() {
   const typingIndicator = document.createElement('div');
   typingIndicator.classList.add('typing-indicator');
@@ -27,7 +26,7 @@ function addTypingIndicator() {
     </div>
   `;
   chatBox.appendChild(typingIndicator);
-//   chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function removeTypingIndicator() {
@@ -47,26 +46,19 @@ sendBtn.addEventListener('click', async () => {
   addTypingIndicator(); // Show typing indicator
 
   try {
+    // const response = await fetch('https://cas-ai.onrender.com/ask', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ question: userText })
+    // });
     const response = await fetch('http://127.0.0.1:5000/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: userText })
     });
-
     if (!response.ok) {
       throw new Error(`Server error: ${response.status}`);
     }
-=======
-    const response = await fetch("https://cas-ai.onrender.com/ask", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question })
-    });
-
-    
->>>>>>> 2e4a7a4ea66ef8151586b518693baa06d3691b62
 
     const data = await response.json();
 
