@@ -44,18 +44,14 @@ def load_vector_store():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     return FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 
-
-
 def get_conversational_chain():
     prompt_template = """
-    You are an intelligent assistant designed to provide accurate and helpful answers to any question asked by the user.
-
-    Guidelines:
-    1. Use the provided context to generate a precise and relevant answer.
-    2. If the context does not directly address the question, search through the available PDF content to find and incorporate relevant information.
-    3. Ensure responses are concise, clear, and easy to understand.
-    4. For questions unrelated to the context or PDF, provide a general, informative answer, redirecting the user if necessary.
-
+    You are an intelligent assistant for a solar energy business. You answer user questions based on the provided PDF content.
+    In addition to answering questions, include a positive, encouraging message tailored to the user's query.
+    - For purchase-related queries, include a customer appreciation message.
+    - For new users, include an encouraging message about starting with solar energy.
+    - For problem-related queries, include an assurance message about solving their issues.
+    - Always maintain a welcoming tone in your response.
     Context:
     {context}
 
@@ -67,6 +63,7 @@ def get_conversational_chain():
     model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     return load_qa_chain(model, chain_type="stuff", prompt=prompt)
+
 
 @app.route('/ask', methods=['POST'])
 def ask():
